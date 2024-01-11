@@ -26,6 +26,9 @@ output:
 ansible:
 	@cd $(ANSIBLE_DIR) && ansible-playbook -i ../inventory.ini playbooks/main.yml
 
+deployment:
+	@cd $(ANSIBLE_DIR) && ansible-playbook -i ../inventory.ini playbooks/deployment.yml
+
 generate_ssh_key:
 	@mkdir -p $(SSH_KEY_DIR)
 	@ssh-keygen -t rsa -b 2048 -f $(SSH_KEY_DIR)/$(SSH_KEY_NAME) -N ""

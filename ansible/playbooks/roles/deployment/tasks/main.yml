@@ -1,0 +1,10 @@
+---
+- name: Update Source code
+  copy:
+    src: "{{ playbook_dir }}/../../src/index.html"
+    dest: /var/www/html/index.html
+
+- name: Reload Apache service
+  service:
+    name: apache2
+    state: reloaded
