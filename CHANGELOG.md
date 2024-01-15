@@ -21,3 +21,10 @@
  - on the ansible create deployment playbook and role
     - to copy local src/index.html to remote /var/www/html/index.html
  - add deployment script in Makefile to ease the deployment
+
+
+## 2024-01-15
+
+### Summary
+ - Create a s3 backend and migrate state (S3 and DynamoDB)
+ - migrate local state to s3 using `terraform init -migrate-state -lock=false`
