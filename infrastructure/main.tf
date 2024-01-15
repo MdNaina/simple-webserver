@@ -1,3 +1,16 @@
+terraform {
+  backend "s3" {
+    bucket = "2k-terraform-state-001"
+    key = "web_server/terraform.tfstate"
+    encrypt = true
+    dynamodb_table = "tf-backend"
+    
+
+    profile = "terraform"
+    region = "eu-north-1"
+  }
+}
+
 provider "aws" {
   profile = var.aws_profile
   region = var.aws_region
